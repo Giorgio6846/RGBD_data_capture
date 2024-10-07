@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23502" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,16 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajY-TT-566" userLabel="2D View" customClass="PreviewMetalView" customModule="TrueDepthStreamer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="728"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smooth Depth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCU-4v-Pkw" userLabel="Smooth Depth Label">
-                                        <rect key="frame" x="65" y="23.666666666666671" width="126.33333333333331" height="24"/>
+                                        <rect key="frame" x="65" y="23.666666666666671" width="127" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x5F-tE-pbz">
-                                        <rect key="frame" x="-2" y="700" width="379" height="31"/>
+                                        <rect key="frame" x="-2" y="694" width="379" height="31"/>
                                         <connections>
                                             <action selector="changeMixFactor:" destination="BYZ-38-t0r" eventType="valueChanged" id="QU7-1h-yAf"/>
                                         </connections>
@@ -63,16 +63,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzi-3c-VQI" userLabel="3D View" customClass="PointCloudMetalView">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="728"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto Panning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fm2-sp-46o">
-                                        <rect key="frame" x="65" y="686.66666666666663" width="115.33333333333331" height="24"/>
+                                        <rect key="frame" x="65" y="680.66666666666663" width="116.33333333333331" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="1" green="0.98406440019999997" blue="0.001863333862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yy3-zH-gY9" userLabel="Auto Panning Switch">
-                                        <rect key="frame" x="8" y="683" width="51" height="31"/>
+                                        <rect key="frame" x="8" y="677" width="51" height="31"/>
                                         <connections>
                                             <action selector="didAutoPanningChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="QRG-Ns-bvr"/>
                                         </connections>
@@ -85,14 +85,14 @@
                                 </constraints>
                             </view>
                             <label hidden="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrueDepth Camera Unavailable" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B08-Wv-b5R" userLabel="Camera Unavailable">
-                                <rect key="frame" x="26.666666666666657" y="391.66666666666669" width="321.66666666666674" height="28.666666666666686"/>
+                                <rect key="frame" x="27" y="391.66666666666669" width="321" height="28.666666666666686"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6D4-Y8-I1S" userLabel="Resume">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6D4-Y8-I1S" userLabel="Resume">
                                 <rect key="frame" x="105" y="386.66666666666669" width="165" height="39"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -109,8 +109,14 @@
                                     <action selector="resumeInterruptedSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ZM-QH-ZlN"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dpd-UP-f9C">
+                                <rect key="frame" x="13" y="120" width="355" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="wHT-4T-oJU" userLabel="Cloud To JET Seg Ctrl">
-                                <rect key="frame" x="266" y="64" width="101" height="32"/>
+                                <rect key="frame" x="266" y="70" width="101" height="32"/>
                                 <segments>
                                     <segment title="2D" width="50"/>
                                     <segment title="3D" width="50"/>
@@ -120,6 +126,7 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Gl-sb-vLR"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6D4-Y8-I1S" firstAttribute="centerY" secondItem="Eqv-7y-uCz" secondAttribute="centerY" id="0cF-Ck-xhe"/>
@@ -139,7 +146,6 @@
                             <constraint firstItem="Qzi-3c-VQI" firstAttribute="height" secondItem="ajY-TT-566" secondAttribute="height" id="ufK-nY-e5D"/>
                             <constraint firstItem="B08-Wv-b5R" firstAttribute="centerY" secondItem="Eqv-7y-uCz" secondAttribute="centerY" id="usf-3D-Qpy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="3Gl-sb-vLR"/>
                     </view>
                     <connections>
                         <outlet property="autoPanningSwitch" destination="yy3-zH-gY9" id="KN3-UL-caQ"/>
@@ -147,6 +153,7 @@
                         <outlet property="cloudToJETSegCtrl" destination="wHT-4T-oJU" id="nvd-4h-26L"/>
                         <outlet property="cloudView" destination="Qzi-3c-VQI" id="4GD-1c-K9J"/>
                         <outlet property="depthSmoothingSwitch" destination="9Aw-a4-Jqw" id="plJ-q5-xAr"/>
+                        <outlet property="ipAddress" destination="dpd-UP-f9C" id="8hw-bh-KG2"/>
                         <outlet property="jetView" destination="ajY-TT-566" id="a0f-H1-2Fr"/>
                         <outlet property="mixFactorSlider" destination="x5F-tE-pbz" id="y4U-DD-NqG"/>
                         <outlet property="resumeButton" destination="6D4-Y8-I1S" id="xYq-f7-4cQ"/>
@@ -159,8 +166,8 @@
             <point key="canvasLocation" x="26.399999999999999" y="84.975369458128085"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
         <image name="kuang.png" width="374" height="397"/>
     </resources>
-    <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

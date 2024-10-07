@@ -13,6 +13,7 @@
 		261FA1F91E94641700BE8D47 /* Mixer.metal in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1F81E94641700BE8D47 /* Mixer.metal */; };
 		2633CF1D1E7C65D500FC80E1 /* DepthToJETConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633CF1C1E7C65D500FC80E1 /* DepthToJETConverter.swift */; };
 		2672370E1E79BFC0003D2EAA /* DepthToJET.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2672370D1E79BFBF003D2EAA /* DepthToJET.metal */; };
+		2ED0154D2CB37C8000827409 /* Communication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED0154C2CB37C8000827409 /* Communication.swift */; };
 		6D20BC101FFE665100496684 /* PointCloudMetalView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D20BC0F1FFE665100496684 /* PointCloudMetalView.mm */; };
 		C1C4CF5C2536AD10000F015C /* kuang.png in Resources */ = {isa = PBXBuildFile; fileRef = C1C4CF5B2536AD10000F015C /* kuang.png */; };
 		C3444A7D1FFE6110002D901D /* AAPLTransforms.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3444A741FFE6110002D901D /* AAPLTransforms.mm */; };
@@ -37,6 +38,7 @@
 		2633CF1C1E7C65D500FC80E1 /* DepthToJETConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepthToJETConverter.swift; sourceTree = "<group>"; };
 		2672370D1E79BFBF003D2EAA /* DepthToJET.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = DepthToJET.metal; sourceTree = "<group>"; };
 		267ED84D1ED7965A00898078 /* TrueDepthStreamer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrueDepthStreamer-Bridging-Header.h"; sourceTree = "<group>"; };
+		2ED0154C2CB37C8000827409 /* Communication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communication.swift; sourceTree = "<group>"; };
 		6D20BC0F1FFE665100496684 /* PointCloudMetalView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PointCloudMetalView.mm; sourceTree = "<group>"; };
 		C1C4CF5B2536AD10000F015C /* kuang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kuang.png; sourceTree = "<group>"; };
 		C3444A731FFE6110002D901D /* PointCloudMetalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointCloudMetalView.h; sourceTree = "<group>"; };
@@ -80,6 +82,13 @@
 				261FA1F81E94641700BE8D47 /* Mixer.metal */,
 			);
 			path = Shaders;
+			sourceTree = "<group>";
+		};
+		2ED0154E2CB37D9500827409 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Packages;
 			sourceTree = "<group>";
 		};
 		8F7DEDF83CEB2358D1CCC092 /* Configuration */ = {
@@ -127,6 +136,7 @@
 		E422DFAE1CEF894F0047D7A4 = {
 			isa = PBXGroup;
 			children = (
+				2ED0154E2CB37D9500827409 /* Packages */,
 				041BA6982535CA3100785B21 /* UIImage+CVPixelBuffer.swift */,
 				041BA6952535C80000785B21 /* CVpixelBuffer2UIImage16bit.h */,
 				041BA6962535C80000785B21 /* CVpixelBuffer2UIImage16bit.m */,
@@ -166,6 +176,7 @@
 				E422DFC31CEF894F0047D7A4 /* LaunchScreen.storyboard */,
 				E422DFC61CEF894F0047D7A4 /* Info.plist */,
 				267ED84D1ED7965A00898078 /* TrueDepthStreamer-Bridging-Header.h */,
+				2ED0154C2CB37C8000827409 /* Communication.swift */,
 			);
 			path = TrueDepthStreamer;
 			sourceTree = "<group>";
@@ -202,7 +213,7 @@
 				TargetAttributes = {
 					E422DFB61CEF894F0047D7A4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = R24TLJ3YBG;
+						DevelopmentTeam = PL76RFXTQ4;
 						LastSwiftMigration = 1100;
 						ProvisioningStyle = Automatic;
 					};
@@ -249,6 +260,7 @@
 				261FA1F71E945EEA00BE8D47 /* VideoMixer.swift in Sources */,
 				261FA1F91E94641700BE8D47 /* Mixer.metal in Sources */,
 				E4A8A1421CF6188A006823AB /* PassThrough.metal in Sources */,
+				2ED0154D2CB37C8000827409 /* Communication.swift in Sources */,
 				E422DFCF1CEF8AF50047D7A4 /* AppDelegate.swift in Sources */,
 				C3B256731FDE655200617DD7 /* HistogramCalculator.m in Sources */,
 				C3444A7D1FFE6110002D901D /* AAPLTransforms.mm in Sources */,
@@ -411,7 +423,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R24TLJ3YBG;
+				DEVELOPMENT_TEAM = PL76RFXTQ4;
 				INFOPLIST_FILE = TrueDepthStreamer/Info.plist;
 				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -437,7 +449,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R24TLJ3YBG;
+				DEVELOPMENT_TEAM = PL76RFXTQ4;
 				INFOPLIST_FILE = TrueDepthStreamer/Info.plist;
 				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

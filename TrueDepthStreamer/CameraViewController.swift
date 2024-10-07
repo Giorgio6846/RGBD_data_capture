@@ -75,6 +75,8 @@ class CameraViewController: UIViewController, AVCaptureDataOutputSynchronizerDel
     
     @IBOutlet weak private var smoothDepthLabel: UILabel!
     
+    @IBOutlet weak private var ipAddress: UITextField!
+    
     private var lastScale = Float(1.0)
     
     private var lastScaleDiff = Float(0.0)
@@ -808,11 +810,9 @@ class CameraViewController: UIViewController, AVCaptureDataOutputSynchronizerDel
         if let UIImageVideoPixelBuffer = UIImage(pixelBuffer: videoPixelBuffer){
                let photoView : PhotoView! = PhotoView()
                if let UIImagedepthPixelBuffer : UIImage = photoView.depthBuffer(toImage: depthPixelBuffer){
-                   // depth image save
-                   UIImageWriteToSavedPhotosAlbum(UIImagedepthPixelBuffer, nil, nil, nil)
-                   usleep(5000)  //5ms
-                   // color image save
-                   UIImageWriteToSavedPhotosAlbum(UIImageVideoPixelBuffer, nil, nil, nil)
+                   
+                   //Server Communication
+                   sendDataToServer(depthData: UIImagedepthPixelBuffer, imageData: UIImageVideoPixelBuffer, ip: ipAddress.text ?? "")
                    usleep(5000)  //5ms
                }
            }
