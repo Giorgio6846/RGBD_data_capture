@@ -161,18 +161,42 @@ typedef unsigned char byte;
     size_t width = CVPixelBufferGetWidth(pixelBufffer);
     size_t height = CVPixelBufferGetHeight(pixelBufffer);
     
-    byte *array = (byte *) malloc(width*height*4);
+    byte *array = (byte *) malloc(width*height*kPixelChannelCount);
+    
+    float minDepth = FLT_MAX;
+    float maxDepth = FLT_MIN;
+    
+    for(int j = 0; j < height; j++) {
+        for(int i = 0; i < width; i++) {
+            int index = j * width + i;
+            float depthValue = ((__fp16 *)baseAddress)[index];
+            if(depthValue < minDepth) {
+                minDepth = depthValue;
+            }
+            if(depthValue > maxDepth) {
+                maxDepth = depthValue;
+            }
+        }
+    }
+    
+    float depthRange = fmaxf(maxDepth- minDepth, 1e-5);
     
     for (int j = 0; j<height; j++) {
         for (int i =0; i<width; i++) {
             int index = j * width + i;
             //ARGB
 //        lxk: change one channel depth to channel 4
-            int depth =((__fp16 *)baseAddress)[index] * 10000;
-            array[ index*kPixelChannelCount + 1] = (byte)(depth/255);
-            array[ index*kPixelChannelCount + 2] = (byte)(depth%255);
-            array[ index*kPixelChannelCount + 3] = 0;
-            array[ index*kPixelChannelCount + 0] = 0;
+            float depthValue =((__fp16 *)baseAddress)[index];
+            float normalizedDepth = (depthValue - minDepth) / depthRange;
+            
+            uint8_t redValue = (uint8_t)((1.0 - normalizedDepth) * 255);
+            uint8_t blueValue = (uint8_t)(normalizedDepth * 255);
+            
+            // Colorear la profundidad en un rango de azul a rojo
+            array[index*kPixelChannelCount + 1] = redValue; // Canal rojo
+            array[index*kPixelChannelCount + 2] = 0; // Canal verde
+            array[index*kPixelChannelCount + 3] = blueValue; // Canal azul
+            array[index*kPixelChannelCount + 0] = 255; // Alpha
         }
     }
     
@@ -196,13 +220,11 @@ typedef unsigned char byte;
     CGImageRelease(cgImage);  //类似这些CG...Ref 在使用完以后都是需要release的，不然内存会有问题
     CGDataProviderRelease(provider);
     CGColorSpaceRelease(rgbColorSpace);
-    NSData* imageData = UIImagePNGRepresentation(image);
-    UIImage* pngImage = [UIImage imageWithData:imageData];
     
     free(array);
     CVPixelBufferUnlockBaseAddress(pixelBufffer, 0);   // 解锁pixel buffer
     
-    return pngImage;
+    return image;
 }
 
 - (void)startRunning{
